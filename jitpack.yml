@@ -1,4 +1,4 @@
 jdk:
   - openjdk17
 install:
-  - cd library && ../gradlew assembleRelease javadocJar sourcesJar
+  - ./gradlew :library:assembleRelease :library:generatePomFileForReleasePublication
