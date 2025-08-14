@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.library'
+    id 'maven-publish' // ADD THIS
 }
 
 android {
@@ -11,25 +12,26 @@ android {
         targetSdkVersion 31
         versionCode 1
         versionName "1.0.2"
+        consumerProguardFiles "consumer-rules.pro" // ADD THIS
     }
     
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+            withJavadocJar()
         }
-    }
-    
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
     }
 }
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.google.android.material:material:1.5.0'
-    implementation "androidx.appcompat:appcompat:1.4.1"
-    implementation "androidx.constraintlayout:constraintlayout:2.1.3"
-    api 'com.github.msarhan:ummalqura-calendar:2.0.2'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.mohamed-adel01'
+                artifactId = 'HijriDatePicker'
+                version = '1.0.2.beta6'
+            }
+        }
+    }
 }
