@@ -31,16 +31,4 @@ dependencies {
     api 'com.github.msarhan:ummalqura-calendar:2.0.2'
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                
-                groupId = 'com.github.mohamed-adel01'
-                artifactId = 'HijriDatePicker'
-                version = '1.0.2'
-            }
-        }
-    }
-}
+// Remove the publishing block since you don't want to publish to Maven
