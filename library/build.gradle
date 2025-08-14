@@ -1,18 +1,18 @@
 plugins {
     id 'com.android.library'
-    id 'maven-publish' // ADD THIS
+    id 'maven-publish'
 }
 
 android {
-    namespace 'com.github.mohamed-adel01.HijriDatePicker'
+    namespace 'com.github.mohamedadel.HijriDatePicker'
     compileSdkVersion 31
 
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 31
         versionCode 1
-        versionName "1.0.2.beta8"
-        consumerProguardFiles "consumer-rules.pro" // ADD THIS
+        versionName "1.0.2.beta9"
+        consumerProguardFiles "consumer-rules.pro"
     }
     
     publishing {
@@ -28,9 +28,9 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.github.mohamed-adel01'
+                groupId = 'com.github.mohamedadel'
                 artifactId = 'HijriDatePicker'
-                version = '1.0.2.beta8'
+                version = '1.0.2.beta9'
             }
         }
     }
