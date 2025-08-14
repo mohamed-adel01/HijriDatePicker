@@ -11,7 +11,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 31
         versionCode 1
-        versionName "1.0.2.beta7"
+        versionName "1.0.2.beta8"
         consumerProguardFiles "consumer-rules.pro" // ADD THIS
     }
     
@@ -30,7 +30,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.mohamed-adel01'
                 artifactId = 'HijriDatePicker'
-                version = '1.0.2.beta7'
+                version = '1.0.2.beta8'
             }
         }
     }
