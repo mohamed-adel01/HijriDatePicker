@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.github.mohamedadel.HijriDatePicker'
+    namespace 'net.alhazmy13.hijridatepicker'
     compileSdkVersion 31
 
     defaultConfig {
@@ -28,7 +28,7 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.github.mohamedadel'
+                groupId = 'net.alhazmy13.hijridatepicker'
                 artifactId = 'HijriDatePicker'
                 version = '1.0.2.beta9'
             }
